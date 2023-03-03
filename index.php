@@ -1,16 +1,15 @@
 <?php
-
 class Movies{
     private $originalTitle;
     private $description;
     private $genres; 
     private $vote;
 
-    function __construct(string $_originalTitle, string $_description, array $_genres, int $_vote = NULL)
+    function __construct(string $_originalTitle, string $_description, $_genres, int $_vote = NULL)
     {
         $this->getTitle($_originalTitle);
         $this->description = $_description;
-        $this->getGenred($_genres);
+        $this->getGenres($_genres);
         $this->getVote($_vote);
     }
 
@@ -24,7 +23,7 @@ class Movies{
         }
     }
 
-    private function getGenred($_genres){
+    private function getGenres($_genres){
         if (is_array($_genres) && !empty($_genres)) {
             $this->genres = $_genres;
         } 
@@ -46,14 +45,10 @@ class Movies{
 }
 
 
-$UP = new Movies('UP', 'Un venditore di palloncini di 78 anni, Carl Fredricksen, realizza finalmente il suo sogno quando collega...', array('famiglia', 'avventura'), 5);
+$UP = new Movies('UP', 'Un venditore di palloncini di 78 anni, Carl Fredricksen, realizza finalmente il suo sogno quando collega...', array('famiglia', 'avventura'), 4);
 var_dump($UP);
 
 $creed = new Movies('Creed I', 'Adonis Johnson (Jordan) non ha mai conosciuto il suo celebre padre...', array('azione', 'sportivo'));
 var_dump($creed);
-
-
-
-
 
 ?>
